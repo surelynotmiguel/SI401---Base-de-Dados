@@ -1,0 +1,96 @@
+body{
+    width: 100%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+input[type=radio]{
+    margin: 5px 10px;
+}
+
+input[type=number], input[type=tel],
+input[type=email], input[type=text]{
+    padding: 10px 15px;
+    margin: 5px 10px;
+    border-radius: 30px;
+    border: 1px solid lightgray;
+}
+
+input[type=submit]{
+    color: white;
+    border: 1px solid #10A37F;
+    font-weight: bolder;
+    background-color: #10A37F;
+    width: 10%;
+    border-radius: 30px;
+    padding: 10px;
+    transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+}
+
+input[type=submit]:hover{
+    color: #10A37F;
+    background-color: white;
+    transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+}
+
+a{
+    font-weight: bold;
+    font-size: large;
+    text-decoration: none;
+    color: lightgray;
+}
+
+ul{
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    margin: 50px 0;
+}
+
+hr{
+    color: lightgray;
+}
+
+.title{
+    color: lightgray;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.menu{
+    height: 100vh;
+    background-color: #202123;
+    float: left;
+    padding: 0 3vw;
+}
+
+.menu p{
+    color: darkgray;
+    text-align: center;
+}
+
+.register-box{
+    padding: 50px;
+    text-align: center;
+}
+
+.copyright{ 
+    vertical-align: bottom;
+}
