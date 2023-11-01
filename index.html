@@ -27,15 +27,15 @@
         <div class="register">
             <div class="register-box">
                 <h1>Cadastro</h1>
-                <form>
-                    <input type="text" placeholder="Nome">
+                <form action="php/database.php" method="post">
+                    <input type="text" placeholder="Nome" maxlength="100">
                     <input type="number" placeholder="R.A." maxlength="6">
                     <br>
-                    <input type="radio" id="masculino" name="sexo" value="Masculino">
+                    <input type="radio" id="masculino" name="genero" value="Masculino">
                     <label for="masculino">Masculino</label>
-                    <input type="radio" id="feminino" name="sexo" value="Feminino">
+                    <input type="radio" id="feminino" name="genero" value="Feminino">
                     <label for="feminino">Feminino</label>
-                    <input type="radio" id="outro" name="sexo" value=""><label for="outro">Outro</label><br>
+                    <input type="radio" id="outro" name="genero" value=""><label for="outro">Outro</label><br>
                     <input type="text" id="outroInput" name="outro" placeholder="Outro">
                     <input type="number" placeholder="Idade">
                     <input type="text" placeholder="Endereço">

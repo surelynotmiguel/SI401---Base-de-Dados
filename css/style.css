@@ -47,6 +47,32 @@ input[type=submit]:hover{
     -webkit-transition: 0.2s ease-in-out;
 }
 
+input[type=search]{
+    width: 30vw;
+    padding: 10px 15px;
+    margin: 20px 1vw;
+    border-radius: 30px;
+    border: 1px solid lightgray;
+}
+
+button[type=submit]{
+    color: white;
+    border: 1px solid #10A37F;
+    border-radius: 30px;
+    padding: 10px;
+    width: 5vw;
+    background-color: #10A37F;
+    transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+}
+
+button[type=submit]:hover{
+    background-color: white;
+    color: #10A37F;
+    transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+}
+
 a{
     font-weight: bold;
     font-size: large;
@@ -67,6 +93,29 @@ li{
 
 hr{
     color: lightgray;
+}
+
+form p{
+    color: red;
+}
+
+table{  
+    margin: auto;
+    margin-top: 50px;
+}
+
+table tr:first-child td:first-child tr:last-child td:last-child{
+    border-top-left-radius: 30px;
+}
+
+th, td{
+    text-align: center;
+    padding: 10px;
+    border: 1px solid lightgray;
+}
+
+td{
+    background-color: whitesmoke;
 }
 
 .title{
@@ -93,6 +142,20 @@ hr{
 .register-box{
     padding: 50px;
     text-align: center;
+}
+
+.list{
+    padding: 50px;
+    text-align: center;
+}
+
+.students-list-box{
+    height: 60vh;
+    overflow: auto;
+}
+
+.list h1{
+    margin-bottom: 50px;
 }
 
 .copyright{ 
