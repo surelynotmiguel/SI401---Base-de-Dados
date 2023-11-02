@@ -17,8 +17,8 @@
                 <hr>
                 <nav class="buttons">
                     <ul>
-                        <li><a href="index.html">Cadastrar</a></li>
-                        <li><a href="listaAlunos.html">Alunos Cadastrados</a></li>
+                        <li><a href="index.php">Cadastrar</a></li>
+                        <li><a href="listaAlunos.php">Alunos Cadastrados</a></li>
                     </ul>
                 </nav>
             </div>
@@ -27,20 +27,22 @@
         <div class="register">
             <div class="register-box">
                 <h1>Cadastro</h1>
-                <form action="php/database.php" method="post">
-                    <input type="text" placeholder="Nome" maxlength="100">
-                    <input type="number" placeholder="R.A." maxlength="6">
+                <form action="listaAlunos.php" method="post">
+                    <input type="text" name="nome" placeholder="Nome" maxlength="100">
+                    <input type="number" name="ra" placeholder="R.A." maxlength="6">
                     <br>
                     <input type="radio" id="masculino" name="genero" value="Masculino">
                     <label for="masculino">Masculino</label>
                     <input type="radio" id="feminino" name="genero" value="Feminino">
                     <label for="feminino">Feminino</label>
-                    <input type="radio" id="outro" name="genero" value=""><label for="outro">Outro</label><br>
-                    <input type="text" id="outroInput" name="outro" placeholder="Outro">
-                    <input type="number" placeholder="Idade">
-                    <input type="text" placeholder="Endereço">
-                    <input type="tel" placeholder="Telefone">
-                    <input type="email" placeholder="E-mail">
+                    <input type="radio" id="prefiro-nao-especificar" name="genero" value="Prefiro Não Especificar">
+                    <label for="prefiro-nao-especificar">Prefiro Não Especificar</label>
+                    <input type="radio" id="outro" name="genero" value="Outro"><label for="outro">Outro</label><br>
+                    <input type="text" id="outroInput" name="genero_outro" placeholder="Outro">
+                    <input type="number" name="idade" placeholder="Idade">
+                    <input type="text" name="endereco" placeholder="Endereço">
+                    <input type="tel" name="telefone" placeholder="Telefone">
+                    <input type="email" name="email" placeholder="E-mail">
                     <br>
                     <input type="submit">
                 </form>

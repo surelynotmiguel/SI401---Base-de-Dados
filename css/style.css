@@ -59,6 +59,7 @@ button[type=submit]{
     color: white;
     border: 1px solid #10A37F;
     border-radius: 30px;
+    margin : 0 5px;
     padding: 10px;
     width: 5vw;
     background-color: #10A37F;
@@ -69,6 +70,25 @@ button[type=submit]{
 button[type=submit]:hover{
     background-color: white;
     color: #10A37F;
+    transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+}
+
+button[type=reset]{
+    color: white;
+    border: 1px solid #B91C1C;
+    border-radius: 30px;
+    margin : 0 5px;
+    padding: 10px;
+    width: 5vw;
+    background-color: #B91C1C;
+    transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+}
+
+button[type=reset]:hover{
+    background-color: white;
+    color: #B91C1C;
     transition: 0.2s ease-in-out;
     -webkit-transition: 0.2s ease-in-out;
 }
@@ -124,6 +144,7 @@ td{
 }
 
 .menu-wrapper{
+    position: fixed;
     text-align: center;
 }
 
@@ -139,18 +160,30 @@ td{
     color: darkgray;
 }
 
+.register{
+    float: right;
+    width: 80vw;
+}
+
 .register-box{
     padding: 50px;
     text-align: center;
 }
 
 .list{
+    width: 80vw;
+    float: right;   
     padding: 50px;
     text-align: center;
 }
 
+.list hr{
+    color: darkgray;
+}
+
 .students-list-box{
-    height: 60vh;
+    margin: auto;
+    width: 70vw;  
     overflow: auto;
 }
 
