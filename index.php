@@ -28,10 +28,10 @@
             <div class="register-box">
                 <h1>Cadastro</h1>
                 <form action="listaAlunos.php" method="post">
-                    <input type="text" name="nome" placeholder="Nome" maxlength="100">
-                    <input type="number" name="ra" placeholder="R.A." maxlength="6">
+                    <input type="text" name="nome" placeholder="Nome" maxlength="100" required>
+                    <input type="number" name="ra" placeholder="R.A." maxlength="6" required>
                     <br>
-                    <input type="radio" id="masculino" name="genero" value="Masculino">
+                    <input type="radio" id="masculino" name="genero" value="Masculino" required>
                     <label for="masculino">Masculino</label>
                     <input type="radio" id="feminino" name="genero" value="Feminino">
                     <label for="feminino">Feminino</label>
@@ -39,10 +39,10 @@
                     <label for="prefiro-nao-especificar">Prefiro Não Especificar</label>
                     <input type="radio" id="outro" name="genero" value="Outro"><label for="outro">Outro</label><br>
                     <input type="text" id="outroInput" name="genero_outro" placeholder="Outro">
-                    <input type="number" name="idade" placeholder="Idade">
-                    <input type="text" name="endereco" placeholder="Endereço">
-                    <input type="tel" name="telefone" placeholder="Telefone">
-                    <input type="email" name="email" placeholder="E-mail">
+                    <input type="number" name="idade" placeholder="Idade" required>
+                    <input type="text" name="endereco" placeholder="Endereço" required>
+                    <input type="tel" name="telefone" placeholder="Telefone" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
                     <br>
                     <input type="submit">
                 </form>

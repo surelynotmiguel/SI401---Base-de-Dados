@@ -54,10 +54,10 @@
             <div class="search-bar-wrapper">
                 <div class="search-bar">
                     <h1>Lista de Alunos</h1>
-                    <form action="listaAlunos.php" method="post">
+                    <form action="listaAlunos.php" method="get">
                         <input type="search" id="pesquisar" name="pesquisa" placeholder="Pesquisar aluno...">
                         <button type="submit"><i class="fa fa-search icon fa-lg"></i></button>
-                        <button type="reset"><i class="fa fa-times fa-lg"></i></button>
+                        <button type="reset" onclick="window.location.href = 'listaAlunos.php'"><i class="fa fa-times fa-lg"></i></button>
                         <p>*Pesquisa por nome ou R.A.</p>
                     </form> 
                 </div>
@@ -75,25 +75,50 @@
                         <th>E-mail</th>
                     </tr>
                     <?php
-                        if (isset($_SESSION['alunos'])){
+                         if (isset($_SESSION['alunos'])) {
                             $alunos = $_SESSION['alunos'];
-
-                            function compareStudentsByRA($alunoA, $alunoB) {
-                                return $alunoA['ra'] - $alunoB['ra'];
+                
+                            if (isset($_GET['pesquisa'])) {
+                                $pesquisa = $_GET['pesquisa'];
+                                $resultadosEncontrados = false;
+                
+                                if (!empty($pesquisa)) {
+                                    foreach ($alunos as $aluno) {
+                                        if (strpos(strtolower($aluno['nome']), strtolower($pesquisa)) !== false || $aluno['ra'] == $pesquisa) {
+                                            echo '<tr>';
+                                            echo '<td>' . $aluno['nome'] . '</td>';
+                                            echo '<td>' . $aluno['ra'] . '</td>';
+                                            echo '<td>' . $aluno['idade'] . '</td>';
+                                            echo '<td>' . $aluno['genero'] . '</td>';
+                                            echo '<td>' . $aluno['endereco'] . '</td>';
+                                            echo '<td>' . $aluno['telefone'] . '</td>';
+                                            echo '<td>' . $aluno['email'] . '</td>';
+                                            echo '</tr>';
+                                            $resultadosEncontrados = true;
+                                        }
+                                    }
+                
+                                    if (!$resultadosEncontrados) {
+                                        echo '<tr><td colspan="7">Nenhum aluno encontrado com esses parâmetros.<br>Certifique-se de estar utilizando Nome ou RA do aluno para pesquisa!</td></tr>';
+                                    }
+                                } else {
+                                    echo '<tr><td colspan="7">Por favor, insira algum texto para pesquisar.</td></tr>';
+                                }
+                            } else {
+                                foreach ($alunos as $aluno) {
+                                    echo '<tr>';
+                                    echo '<td>' . $aluno['nome'] . '</td>';
+                                    echo '<td>' . $aluno['ra'] . '</td>';
+                                    echo '<td>' . $aluno['idade'] . '</td>';
+                                    echo '<td>' . $aluno['genero'] . '</td>';
+                                    echo '<td>' . $aluno['endereco'] . '</td>';
+                                    echo '<td>' . $aluno['telefone'] . '</td>';
+                                    echo '<td>' . $aluno['email'] . '</td>';
+                                    echo '</tr>';
+                                }
                             }
-                            usort($alunos, 'compareStudentsByRA');
-    
-                            foreach ($alunos as $aluno) {
-                                echo '<tr>';
-                                echo '<td>' . $aluno['nome'] . '</td>';
-                                echo '<td>' . $aluno['ra'] . '</td>';
-                                echo '<td>' . $aluno['idade'] . '</td>';
-                                echo '<td>' . $aluno['genero'] . '</td>';
-                                echo '<td>' . $aluno['endereco'] . '</td>';
-                                echo '<td>' . $aluno['telefone'] . '</td>';
-                                echo '<td>' . $aluno['email'] . '</td>';
-                                echo '</tr>';
-                            }
+                        } else {
+                            echo '<tr><td colspan="7">Nenhum aluno cadastrado.</td></tr>';
                         }
                     ?>
                 </table>
