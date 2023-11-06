@@ -18,7 +18,12 @@
             $nome = $_POST['nome'];
             $ra = $_POST['ra'];
             $idade = $_POST['idade'];
-            $genero = $_POST['genero'];
+            $genero = '';
+            if($_POST['genero'] != 'Outro') {
+                $genero = $_POST['genero'];
+            } else {
+                $genero = $_POST['genero_outro'];
+            }
             $endereco = $_POST['endereco'];
             $telefone = $_POST['telefone'];
             $email = $_POST['email'];
