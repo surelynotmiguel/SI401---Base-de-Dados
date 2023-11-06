@@ -77,6 +77,11 @@
                     <?php
                          if (isset($_SESSION['alunos'])) {
                             $alunos = $_SESSION['alunos'];
+
+			    function compareStudentsByRA($alunoA, $alunoB) {
+                                return $alunoA['ra'] - $alunoB['ra'];
+                            }
+                            usort($alunos, 'compareStudentsByRA');
                 
                             if (isset($_GET['pesquisa'])) {
                                 $pesquisa = $_GET['pesquisa'];
